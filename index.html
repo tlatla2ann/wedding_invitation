@@ -10,6 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,700;1,6..96,700&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Rozha+One&display=swap" rel="stylesheet">
 
 <style>
+/* iOS 모바일 부드러운 스크롤 */
+html, body {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -36,7 +42,7 @@ body {
     border-right: 1px solid rgba(0, 0, 0, 0.03);
     text-align: center;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .content-padding {
@@ -322,7 +328,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    padding: 10px 4px;
+    gap: 7px;
     color: #333;
 }
 
@@ -339,13 +346,13 @@ body {
 }
 
 .dday-item .num {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
     color: #222;
 }
 
 .dday-item .label {
-    font-size: 11px;
+    font-size: 9px;
     color: #666;
     margin-top: 4px;
     text-transform: uppercase;
@@ -735,9 +742,9 @@ body {
                 <div class="account-row">
                     <div class="account-info">
                         신랑 정종민<br>
-                        <span class="account-num">국민 94904423556</span>
+                        <span class="account-num">농협 301-0110-8710-81</span>
                     </div>
-                    <button class="copy-btn" onclick="copyAccount('94904423556')">복사하기</button>
+                    <button class="copy-btn" onclick="copyAccount('3010110871081')">복사하기</button>
                 </div>
             </div>
 
@@ -748,7 +755,7 @@ body {
                         신부 심은애<br>
                         <span class="account-num">농협 302-1148-9332-41</span>
                     </div>
-                    <button class="copy-btn" onclick="copyAccount('302-1148-9332-41')">복사하기</button>
+                    <button class="copy-btn" onclick="copyAccount('3021148933241')">복사하기</button>
                 </div>
             </div>
         </section>
@@ -819,6 +826,9 @@ document.addEventListener("DOMContentLoaded", function() {
     sections.forEach(section => {
         observer.observe(section);
     });
+
+    updateDday();
+    setInterval(updateDday, 1000);
 });
 
 function changeImageSlowly(newSrc) {
@@ -907,7 +917,7 @@ function createSparkle() {
     heroContainer.appendChild(sparkle);
 
     const randomRotate = Math.floor(Math.random() * 360);
-    flake.style.transform = `rotate(${randomRotate}deg)`;
+    sparkle.style.transform = `rotate(${randomRotate}deg)`;
 
     // 애니메이션 종료 후 요소 자동 제거
     setTimeout(() => {
