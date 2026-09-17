@@ -11,10 +11,20 @@
 
 <style>
 /* 모바일 스크롤 호환성 최적화 */
-html, body {
+html {
     width: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100%;
+    -webkit-overflow-scrolling: touch;
 }
 
 * {
@@ -120,10 +130,17 @@ body {
 .hero-full-container {
     position: relative;
     width: 100%;
+
+    /* 기존 브라우저용 */
     height: 75vh;
+
+    /* 모바일 브라우저 주소창 변화에 영향 덜 받는 고정 viewport */
+    height: 75svh;
+
     max-height: 640px;
     overflow: hidden;
     margin-bottom: 95px;
+
 }
 
 .hero-full-img {
