@@ -40,7 +40,6 @@ body {
     font-weight: 700;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     word-break: keep-all;
 }
 
@@ -634,12 +633,12 @@ body {
         <div class="hero-overlay">
             <div class="hero-big-date-box">
                 <div>27</div>
-                <div>11</div>
-                <div>14</div>
+                <div>10</div>
+                <div>17</div>
             </div>
             
             <div class="hero-bottom-info">
-                <div class="hero-date-text">2027. 11. 14. SUN 12:00 PM</div>
+                <div class="hero-date-text">2027. 10. 17. SUN 12:00 PM</div>
                 <div class="hero-location-text">울산시티컨벤션 수피아홀 1층</div>
             </div>
         </div>
@@ -688,7 +687,7 @@ body {
         <!-- 4. WEDDING DATE -->
         <section class="section-block fade-in-section">
             <div class="sub-title">WEDDING DATE</div>
-            <div class="section-title">2027년 11월 14일 (일) PM 12:00</div>
+            <div class="section-title">2027년 10월 17일 (일) PM 12:00</div>
             
             <table class="calendar">
                 <thead>
@@ -698,19 +697,22 @@ body {
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+                        <td></td><td></td><td></td><td></td><td></td><td style="color:#e05252;">1</td><td>2</td>
                     </tr>
                     <tr>
-                        <td style="color:#e05252;">7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+                        <td style="color:#e05252;">3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
                     </tr>
                     <tr>
-                        <td style="color:#e05252;"><span class="active-day">14</span></td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+                        <td style="color:#e05252;">10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
                     </tr>
                     <tr>
-                        <td style="color:#e05252;">21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
+                        <td style="color:#e05252;"><span class="active-day">17</span></td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
                     </tr>
                     <tr>
-                        <td style="color:#e05252;">28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td>
+                        <td style="color:#e05252;">24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#e05252;">31</td><td></td><td></td><td></td><td></td><td></td><td></td>
                     </tr>
                 </tbody>
             </table>
@@ -802,7 +804,7 @@ body {
             <a href="https://open.kakao.com/o/sLr6wTNi" target="_blank" class="upload-btn">사진 업로드</a>
 
             <div class="upload-notice">
-                2027-11-14 12:00부터 업로드 가능합니다.
+                2027-10-17 12:00부터 업로드 가능합니다.
             </div>
         </section>
 
@@ -881,7 +883,7 @@ function copyPageUrl() {
     });
 }
 
-const weddingDate = new Date("2027-11-14T12:00:00").getTime();
+const weddingDate = new Date("2027-10-17T12:00:00").getTime();
 
 function updateDday() {
     const now = new Date().getTime();
