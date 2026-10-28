@@ -9,6 +9,9 @@
 <!-- Google Fonts 통합 로드 -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,700;1,6..96,700&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Rozha+One&display=swap" rel="stylesheet">
 
+<!-- 1. OpenStreetMap Leaflet 지도 CSS 불러오기 -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
 <style>
 /* 모바일 스크롤 호환성 최적화 */
 html {
@@ -25,15 +28,6 @@ body {
     overflow-x: hidden;
     min-height: 100%;
     -webkit-overflow-scrolling: touch;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
     background-color: #f7f5f0;
     color: #222222;
     font-family: 'Gowun Batang', serif;
@@ -41,6 +35,12 @@ body {
     display: flex;
     justify-content: center;
     word-break: keep-all;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .container {
@@ -129,17 +129,11 @@ body {
 .hero-full-container {
     position: relative;
     width: 100%;
-
-    /* 기존 브라우저용 */
     height: 75vh;
-
-    /* 모바일 브라우저 주소창 변화에 영향 덜 받는 고정 viewport */
     height: 75svh;
-
     max-height: 640px;
     overflow: hidden;
     margin-bottom: 95px;
-
 }
 
 .hero-full-img {
@@ -386,7 +380,19 @@ body {
     color: #777;
 }
 
-/* LOCATION 섹션 */
+/* LOCATION 섹션 지도 스타일 */
+#map {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #e0dad0;
+    z-index: 1;
+}
+
+.leaflet-control-attribution { display: none !important; }
+
 .map-app-grid {
     display: flex;
     justify-content: center;
@@ -633,19 +639,19 @@ body {
         <div class="hero-overlay">
             <div class="hero-big-date-box">
                 <div>27</div>
-                <div>10</div>
-                <div>17</div>
+                <div>11</div>
+                <div>14</div>
             </div>
             
             <div class="hero-bottom-info">
-                <div class="hero-date-text">2027. 10. 17. SUN 12:00 PM</div>
+                <div class="hero-date-text">2027. 11. 14. SUN 12:00 PM</div>
                 <div class="hero-location-text">울산시티컨벤션 수피아홀 1층</div>
             </div>
         </div>
     </section>
 
     <div class="content-padding">
-        <!-- 2. INVITATION (애니메이션 없이 바로 표시되도록 설정) -->
+        <!-- 2. INVITATION -->
         <section class="section-block">
             <div class="sub-title">INVITATION</div>
             <div class="section-title">소중한 분들을 초대합니다</div>
@@ -666,7 +672,7 @@ body {
             </div>
         </section>
 
-        <!-- 3. GALLERY (여기부터 스크롤 애니메이션 적용) -->
+        <!-- 3. GALLERY -->
         <section class="section-block fade-in-section">
             <div class="sub-title">GALLERY</div>
             <div class="section-title">웨딩 갤러리</div>
@@ -687,7 +693,7 @@ body {
         <!-- 4. WEDDING DATE -->
         <section class="section-block fade-in-section">
             <div class="sub-title">WEDDING DATE</div>
-            <div class="section-title">2027년 10월 17일 (일) PM 12:00</div>
+            <div class="section-title">2027년 11월 14일 (일) PM 12:00</div>
             
             <table class="calendar">
                 <thead>
@@ -697,22 +703,19 @@ body {
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td><td></td><td></td><td></td><td></td><td style="color:#e05252;">1</td><td>2</td>
+                        <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
                     </tr>
                     <tr>
-                        <td style="color:#e05252;">3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+                        <td style="color:#e05252;">7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
                     </tr>
                     <tr>
-                        <td style="color:#e05252;">10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+                        <td style="color:#e05252;"><span class="active-day">14</span></td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
                     </tr>
                     <tr>
-                        <td style="color:#e05252;"><span class="active-day">17</span></td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+                        <td style="color:#e05252;">21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
                     </tr>
                     <tr>
-                        <td style="color:#e05252;">24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
-                    </tr>
-                    <tr>
-                        <td style="color:#e05252;">31</td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td style="color:#e05252;">28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td>
                     </tr>
                 </tbody>
             </table>
@@ -736,9 +739,8 @@ body {
             <div style="font-size:18px; font-weight:bold;">울산시티컨벤션 수피아홀 1층</div>
             <div style="font-size:15px; color:#666; margin-top:5px; margin-bottom:20px;">울산 중구 염포로 55</div>
             
-            <div style="width:100%; overflow:hidden; border-radius:8px; margin-bottom:15px;">
-                <img src="UCC약도.png" alt="UCC시티컨벤션 약도" style="width:100%; height:auto; display:block;">
-            </div>
+            <!-- 이미지 대신 들어간 지도 영역 -->
+            <div id="map"></div>
             
             <div class="map-app-grid">
                 <a href="https://naver.me/xcn87aF0" target="_blank" class="map-app-btn">
@@ -761,8 +763,11 @@ body {
             <div class="sub-title">ACCOUNT</div>
             <div class="section-title">마음 전하실 곳</div>
             
+            <!-- 신랑측 계좌 -->
             <div class="account-card">
                 <div class="account-title">신랑측 계좌번호</div>
+                
+                <!-- 신랑 -->
                 <div class="account-row">
                     <div class="account-info">
                         신랑 정종민<br>
@@ -770,16 +775,46 @@ body {
                     </div>
                     <button class="copy-btn" onclick="copyAccount('3010110871081')">복사하기</button>
                 </div>
+                
+                <!-- 신랑 아버지 -->
+                <div class="account-row" style="margin-top: 12px; padding-top: 12px; border-top: 1px dashed #e0dad0;">
+                    <div class="account-info">
+                        신랑 아버지 정순천<br>
+                        <span class="account-num">은행명 계좌번호입력</span>
+                    </div>
+                    <button class="copy-btn" onclick="copyAccount('아버님계좌번호숫자만')">복사하기</button>
+                </div>
             </div>
 
+            <!-- 신부측 계좌 -->
             <div class="account-card">
                 <div class="account-title">신부측 계좌번호</div>
+                
+                <!-- 신부 -->
                 <div class="account-row">
                     <div class="account-info">
                         신부 심은애<br>
                         <span class="account-num">농협 302-1148-9332-41</span>
                     </div>
                     <button class="copy-btn" onclick="copyAccount('3021148933241')">복사하기</button>
+                </div>
+                
+                <!-- 신부 아버지 -->
+                <div class="account-row" style="margin-top: 12px; padding-top: 12px; border-top: 1px dashed #e0dad0;">
+                    <div class="account-info">
+                        신부 아버지 심남수<br>
+                        <span class="account-num">은행명 계좌번호입력</span>
+                    </div>
+                    <button class="copy-btn" onclick="copyAccount('아버님계좌번호숫자만')">복사하기</button>
+                </div>
+
+                <!-- 신부 어머니 -->
+                <div class="account-row" style="margin-top: 12px; padding-top: 12px; border-top: 1px dashed #e0dad0;">
+                    <div class="account-info">
+                        신부 어머니 김회정<br>
+                        <span class="account-num">은행명 계좌번호입력</span>
+                    </div>
+                    <button class="copy-btn" onclick="copyAccount('어머님계좌번호숫자만')">복사하기</button>
                 </div>
             </div>
         </section>
@@ -804,7 +839,7 @@ body {
             <a href="https://open.kakao.com/o/sLr6wTNi" target="_blank" class="upload-btn">사진 업로드</a>
 
             <div class="upload-notice">
-                2027-10-17 12:00부터 업로드 가능합니다.
+                2027-11-14 12:00부터 업로드 가능합니다.
             </div>
         </section>
 
@@ -830,8 +865,24 @@ body {
 
 </div>
 
+<!-- 2. OpenStreetMap Leaflet 지도 JavaScript 불러오기 -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+    // 3. 지도 초기화 (울산시티컨벤션 좌표)
+    var map = L.map('map', { closePopupOnClick: false }).setView([35.560964, 129.348038], 16);
+
+    // 오픈스트리트맵 타일 서버 로드
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 20,
+        attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // 위치 마커 및 팝업 말풍선 추가
+    var marker = L.marker([35.560964, 129.348038]).addTo(map);
+    marker.bindPopup("<b>울산시티컨벤션</b><br>수피아홀 1층").openPopup();
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -883,7 +934,7 @@ function copyPageUrl() {
     });
 }
 
-const weddingDate = new Date("2027-10-17T12:00:00").getTime();
+const weddingDate = new Date("2027-11-14T12:00:00").getTime();
 
 function updateDday() {
     const now = new Date().getTime();
