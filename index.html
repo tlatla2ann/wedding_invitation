@@ -18,7 +18,7 @@ html {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    background-color: #f7f5f0;
 }
 
 body {
@@ -465,8 +465,19 @@ body {
     line-height: 1.5;
 }
 
+.account-label {
+    color: #352317;
+    font-weight: 400;
+    margin-right: 4px;
+}
+
+.account-name {
+    color: #1A0F0A;
+    font-weight: 700;
+}
+
 .account-info .account-num {
-    color: #555555;
+    color: #1A0F0A;
     font-size: 14px;
     font-weight: 400;
 }
@@ -639,12 +650,12 @@ body {
         <div class="hero-overlay">
             <div class="hero-big-date-box">
                 <div>27</div>
-                <div>11</div>
-                <div>14</div>
+                <div>10</div>
+                <div>17</div>
             </div>
             
             <div class="hero-bottom-info">
-                <div class="hero-date-text">2027. 11. 14. SUN 12:00 PM</div>
+                <div class="hero-date-text">2027. 10. 17. SUN 12:00 PM</div>
                 <div class="hero-location-text">울산시티컨벤션 수피아홀 1층</div>
             </div>
         </div>
@@ -693,7 +704,7 @@ body {
         <!-- 4. WEDDING DATE -->
         <section class="section-block fade-in-section">
             <div class="sub-title">WEDDING DATE</div>
-            <div class="section-title">2027년 11월 14일 (일) PM 12:00</div>
+            <div class="section-title">2027년 10월 17일 (일) PM 12:00</div>
             
             <table class="calendar">
                 <thead>
@@ -703,19 +714,22 @@ body {
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+                        <td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td>
                     </tr>
                     <tr>
-                        <td style="color:#e05252;">7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+                        <td style="color:#e05252;">3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
                     </tr>
                     <tr>
-                        <td style="color:#e05252;"><span class="active-day">14</span></td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+                        <td style="color:#e05252;">10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
                     </tr>
                     <tr>
-                        <td style="color:#e05252;">21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
+                        <td style="color:#e05252;"><span class="active-day">17</span></td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
                     </tr>
                     <tr>
-                        <td style="color:#e05252;">28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td>
+                        <td style="color:#e05252;">24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#e05252;">31</td><td></td><td></td><td></td><td></td><td></td><td></td>
                     </tr>
                 </tbody>
             </table>
@@ -770,7 +784,7 @@ body {
                 <!-- 신랑 -->
                 <div class="account-row">
                     <div class="account-info">
-                        신랑 정종민<br>
+                        <span class="account-label">신랑</span> <span class="account-name">정종민</span><br>
                         <span class="account-num">농협 301-0110-8710-81</span>
                     </div>
                     <button class="copy-btn" onclick="copyAccount('3010110871081')">복사하기</button>
@@ -779,7 +793,7 @@ body {
                 <!-- 신랑 아버지 -->
                 <div class="account-row" style="margin-top: 12px; padding-top: 12px; border-top: 1px dashed #e0dad0;">
                     <div class="account-info">
-                        신랑 아버지 정순천<br>
+                        <span class="account-label">신랑 아버지</span> <span class="account-name">정순천</span><br>
                         <span class="account-num">은행명 계좌번호입력</span>
                     </div>
                     <button class="copy-btn" onclick="copyAccount('아버님계좌번호숫자만')">복사하기</button>
@@ -793,7 +807,7 @@ body {
                 <!-- 신부 -->
                 <div class="account-row">
                     <div class="account-info">
-                        신부 심은애<br>
+                        <span class="account-label">신부</span> <span class="account-name">심은애</span><br>
                         <span class="account-num">농협 302-1148-9332-41</span>
                     </div>
                     <button class="copy-btn" onclick="copyAccount('3021148933241')">복사하기</button>
@@ -802,7 +816,7 @@ body {
                 <!-- 신부 아버지 -->
                 <div class="account-row" style="margin-top: 12px; padding-top: 12px; border-top: 1px dashed #e0dad0;">
                     <div class="account-info">
-                        신부 아버지 심남수<br>
+                        <span class="account-label">신부 아버지</span> <span class="account-name">심남수</span><br>
                         <span class="account-num">은행명 계좌번호입력</span>
                     </div>
                     <button class="copy-btn" onclick="copyAccount('아버님계좌번호숫자만')">복사하기</button>
@@ -811,7 +825,7 @@ body {
                 <!-- 신부 어머니 -->
                 <div class="account-row" style="margin-top: 12px; padding-top: 12px; border-top: 1px dashed #e0dad0;">
                     <div class="account-info">
-                        신부 어머니 김회정<br>
+                        <span class="account-label">신부 어머니</span> <span class="account-name">김회정</span><br>
                         <span class="account-num">은행명 계좌번호입력</span>
                     </div>
                     <button class="copy-btn" onclick="copyAccount('어머님계좌번호숫자만')">복사하기</button>
@@ -839,7 +853,7 @@ body {
             <a href="https://open.kakao.com/o/sLr6wTNi" target="_blank" class="upload-btn">사진 업로드</a>
 
             <div class="upload-notice">
-                2027-11-14 12:00부터 업로드 가능합니다.
+                2027-10-17 12:00부터 업로드 가능합니다.
             </div>
         </section>
 
@@ -934,7 +948,7 @@ function copyPageUrl() {
     });
 }
 
-const weddingDate = new Date("2027-11-14T12:00:00").getTime();
+const weddingDate = new Date("2027-10-17T12:00:00").getTime();
 
 function updateDday() {
     const now = new Date().getTime();
